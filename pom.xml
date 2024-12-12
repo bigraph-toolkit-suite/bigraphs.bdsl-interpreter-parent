@@ -100,7 +100,7 @@
         <!-- Bigraphs -->
         <bigraph.version>2.0.1</bigraph.version>
         <bdsl.interpreter.version>${project.version}</bdsl.interpreter.version>
-        <bdsl.ce.version>3.0.0-SNAPSHOT</bdsl.ce.version>
+        <bdsl.ce.version>2.0.1</bdsl.ce.version>
         <bdsl.ce.local.version>3.0.0-SNAPSHOT</bdsl.ce.local.version>
         <!-- Other -->
         <xtext.version>2.32.0</xtext.version>
@@ -596,8 +596,8 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
-                                    <keyname>0x153DD2CF</keyname>
-                                    <passphraseServerId>0x153DD2CF</passphraseServerId>
+                                    <keyname>0x26A857F8</keyname>
+                                    <passphraseServerId>0x26A857F8</passphraseServerId>
                                     <gpgArguments>
                                         <arg>--pinentry-mode</arg>
                                         <arg>loopback</arg>

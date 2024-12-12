@@ -12,6 +12,7 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 |------------------------------|---------|----------------|
 | **BDSL Interpreter**         | 2.0.1   | 3.0.0-SNAPSHOT |
 | BDSL Core Elements (Grammar) | 2.0.1   | 2.0.1          |
+| Bigraph Framework            | 2.0.1   | 2.0.1          |
 
 ### Structure
 
@@ -77,7 +78,7 @@ java -jar bdsl.jar --main=program.bdsl <other-options...>
 > 
 > It provides a more detailed introduction into BDSL and the command-line tool
 
-## Build Configuration
+## Development: Build Configuration
 
 **Requirements:** 
 - Java >= 17
@@ -97,9 +98,7 @@ $ mvn package -Pbuild-cli
 After executing the command above, the command-line interpreter tool for BDSL is then available under `./bdsl-interpreter-cli/target/` from the root directory of this project.
 See also the `README.md` of the respective submodules for more details on how to use the whole BDSL interpreter framework.
 
-### Development
-
-#### Dependencies
+### Dependency Management
 This project uses [Bigraph Framework](https://git-st.inf.tu-dresden.de/bigraphs/bigraph-framework) to perform all elementary underlying bigraph model operations.
 The grammar, parser and other DSL-related things come from [BDSL Core Elements](https://git-st.inf.tu-dresden.de/bigraphs/bigraph-dsl-ce).
 
@@ -123,7 +122,7 @@ The version can be specified in the project's root `pom.xml` via the property `b
 
 To deploy the BDSL Interpreter Framework to the Central Repository:
 ```bash
-mvn deploy -Prelease -DskipTests
+mvn clean deploy -DskipTests -P release,ossrh
 ```
 
 **Settings**
@@ -141,7 +140,7 @@ and the GPG credentials being available e.g. from `settings.xml`.
 
 More details can be found link:https://central.sonatype.org/publish/requirements/gpg/[here].
 
-## Additional Notes
+### Additional Notes
 
 > **Note:** The current `*.jar` of the [Bigraph DSL](https://github.com/bigraph-toolkit-suite/bigraphs.bdsl-core-elements) project is also copied in the `./etc/lib/` folder for testing.
 >
@@ -150,9 +149,11 @@ More details can be found link:https://central.sonatype.org/publish/requirements
 > The Maven build script can automatically install it in the local Maven repository (usually located under `~/.m2/`).
 
 
-> **Note 2:** The project uses [Lombok](https://projectlombok.org/) in order to incorporate **extension methods** for Java.
-> The IDE is not able to properly resolve these extension methods and will show error messages that the used extension methods cannot be resolved. **However, the code will still compile.** 
-> An update of the Lombok IntelliJ plugin is released soon supporting extension methods by Lombok in IntelliJ. 
+[//]: # (> **Note 2:** The project uses [Lombok]&#40;https://projectlombok.org/&#41; in order to incorporate **extension methods** for Java.)
+
+[//]: # (> The IDE is not able to properly resolve these extension methods and will show error messages that the used extension methods cannot be resolved. **However, the code will still compile.** )
+
+[//]: # (> An update of the Lombok IntelliJ plugin is released soon supporting extension methods by Lombok in IntelliJ. )
 
 
 ## License
@@ -160,7 +161,7 @@ More details can be found link:https://central.sonatype.org/publish/requirements
 **Bigraph Interpreter** is Open Source software released under the Apache 2.0 license.
 
 ```text
-   Copyright 2020 Dominik Grzelak
+   Copyright 2020-present Dominik Grzelak
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
