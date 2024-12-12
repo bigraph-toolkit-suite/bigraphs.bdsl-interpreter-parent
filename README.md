@@ -2,10 +2,6 @@
 
 # BDSL Interpreter Framework
 
-This project contains an interpreter for [BDSL](https://git-st.inf.tu-dresden.de/bigraphs/bigraph-dsl-ce) (a DSL for "computational bigraphs") for learning and experimentation when working with the bigraph theory of Robin Milner.
-It provides an easier start into the theory by allowing the user to specify arbitrary bigraph expressions and bigraphical reactive systems by using a DSL called BDSL.
-Moreover, the language includes some simple functions to print and export the defined bigraphs and also basic analysis techniques such as model checking.
-
 The framework and grammar can be extended and facilitate "bigraphical language engineering."
 
 |                              | Release | Development    |
@@ -14,18 +10,23 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 | BDSL Core Elements (Grammar) | 2.0.1   | 2.0.1          |
 | Bigraph Framework            | 2.0.1   | 2.0.1          |
 
-### Structure
+## Description
 
-This project comprises three modules:
-- `bdsl-interpreter-cli`: A command-line interface for the algebraic bigraph interpreter.
-- `bdsl-interpreter-core`: the main functionality of the bigraph interpreter.
-- `bdsl-execution-common`: an abstract BDSL statement execution framework to specify and manage BDSL program execution. It is used by the CLI.
+The BDSL Interpreter is a multi-module Maven project
+designed to provide a robust and extensible framework for interpreting BDSL scripts. 
+Each module in the project focuses on a specific set of features,
+enabling a modular and maintainable architecture for developing and executing BDSL-based applications.
+Below is an overview of the project and its modules:
+
+**Project Modules:**
+- bdsl-interpreter-parent: Acts as the parent module for the entire project, managing shared configurations, dependencies, and build settings for all submodules.
+- bdsl-interpreter-core: Contains the core features and foundational components of the BDSL interpreter. This module defines the architectural framework and fundamental mechanisms required for interpreting BDSL language constructs.
+- bdsl-interpreter-cli: Implements a command-line interface for interacting with the BDSL interpreter. This module enables users to execute BDSL models and interact with the interpreter from the terminal.
+- bdsl-execution-common: Provides the common execution environment and reusable strategies for the BDSL interpreter. This module encapsulates shared execution logic, environment management, and strategy definitions.
 
 ## Getting Started
 
 ### Maven Configuration
-
-**Dependencies**
 
 ```xml
 <dependencies>
