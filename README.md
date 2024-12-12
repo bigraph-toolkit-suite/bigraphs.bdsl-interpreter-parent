@@ -2,7 +2,7 @@
 
 # BDSL Interpreter Framework
 
-The framework and grammar can be extended and facilitate "bigraphical language engineering."
+**Version Compatability**
 
 |                              | Release | Development    |
 |------------------------------|---------|----------------|
@@ -24,6 +24,8 @@ Below is an overview of the project and its modules:
 - bdsl-interpreter-cli: Implements a command-line interface for interacting with the BDSL interpreter. This module enables users to execute BDSL models and interact with the interpreter from the terminal.
 - bdsl-execution-common: Provides the common execution environment and reusable strategies for the BDSL interpreter. This module encapsulates shared execution logic, environment management, and strategy definitions.
 
+The framework and grammar can be extended and facilitate "bigraphical language engineering."
+
 ## Getting Started
 
 ### Maven Configuration
@@ -34,18 +36,18 @@ Below is an overview of the project and its modules:
     <dependency>
         <groupId>org.bigraphs.dsl.interpreter</groupId>
         <artifactId>bdsl-interpreter-core</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>VERSION</version>
     </dependency>
     <!-- CLI: the high-level building block to access command-line interface parser -->
     <dependency>
         <groupId>org.bigraphs.dsl.interpreter</groupId>
         <artifactId>bdsl-interpreter-cli</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>VERSION</version>
     </dependency>
     <!-- Exec: Advanced BDSL Statement Executions -->
     <dependency>
         <groupId>org.bigraphs.dsl.interpreter</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>VERSION</version>
         <artifactId>bdsl-execution-common</artifactId>
     </dependency>
 </dependencies>
