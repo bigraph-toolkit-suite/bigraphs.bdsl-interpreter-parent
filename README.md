@@ -16,7 +16,7 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 
 ### Structure
 
-This project comprises 3 modules:
+This project comprises three modules:
 - `bdsl-interpreter-cli`: A command-line interface for the algebraic bigraph interpreter.
 - `bdsl-interpreter-core`: the main functionality of the bigraph interpreter.
 - `bdsl-execution-common`: an abstract BDSL statement execution framework to specify and manage BDSL program execution. It is used by the CLI.
@@ -75,12 +75,12 @@ java -jar bdsl.jar --main=program.bdsl <other-options...>
 ```
 
 > Refer also to the BDSL user guide: https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-752170
-> 
+>
 > It provides a more detailed introduction into BDSL and the command-line tool
 
 ## Development: Build Configuration
 
-**Requirements:** 
+**Requirements:**
 - Java >= 17
 - Maven >= 3.8.3
 
@@ -145,7 +145,7 @@ More details can be found link:https://central.sonatype.org/publish/requirements
 > **Note:** The current `*.jar` of the [Bigraph DSL](https://github.com/bigraph-toolkit-suite/bigraphs.bdsl-core-elements) project is also copied in the `./etc/lib/` folder for testing.
 >
 > In case you want to use the latest <i>BDSL Core Elements</i> `*.jar`, you have to manually install it. See [BDSL Core Elements](https://github.com/bigraph-toolkit-suite/bigraphs.bdsl-core-elements) for more details.
-> 
+>
 > The Maven build script can automatically install it in the local Maven repository (usually located under `~/.m2/`).
 
 
