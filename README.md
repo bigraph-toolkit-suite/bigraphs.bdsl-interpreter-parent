@@ -16,7 +16,7 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 
 ### Structure
 
-This project comprises 3 modules:
+This project comprises three modules:
 - `bdsl-interpreter-cli`: A command-line interface for the algebraic bigraph interpreter.
 - `bdsl-interpreter-core`: the main functionality of the bigraph interpreter.
 - `bdsl-execution-common`: an abstract BDSL statement execution framework to specify and manage BDSL program execution. It is used by the CLI.
