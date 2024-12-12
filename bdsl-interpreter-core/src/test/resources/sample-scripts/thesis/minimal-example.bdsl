@@ -1,0 +1,5 @@
+main = {
+    println("Hello, World!")
+    val b = { barren() * subst("x", ["x"]) }
+    println($b)
+}

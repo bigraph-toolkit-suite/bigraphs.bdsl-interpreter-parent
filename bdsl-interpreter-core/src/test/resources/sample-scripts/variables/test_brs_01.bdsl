@@ -1,0 +1,20 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+}
+
+brs brsVar1(Sig1) = {
+    agents = [$bigVar1],
+    rules = [$ruleVar1],
+    preds = [$predVar1]
+}
+
+brs brsVar2 = $brsVar1
+
+val bigVar1(Sig1) = {a | b | b}
+react ruleVar1(Sig1) = { a | b}, { a | b}
+pred predVar1(Sig1) = { a | b}

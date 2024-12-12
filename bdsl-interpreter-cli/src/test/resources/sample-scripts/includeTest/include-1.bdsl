@@ -1,0 +1,9 @@
+namespace sum.types
+
+signature SigSum {
+	active ctrl plusOp arity 0
+	active ctrl s arity 0
+	active ctrl z arity 0
+	active ctrl left arity 0
+	active ctrl right arity 0
+}

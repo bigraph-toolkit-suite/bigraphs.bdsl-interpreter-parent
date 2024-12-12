@@ -1,0 +1,14 @@
+import:udf de.tudresden.inf.st.bigraphs.examples.interpreter.udf.*
+
+signature Sig1 {
+    atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+main = {
+	val test1(Sig1) = {a}
+    j {
+    	HelloUdfFunction()
+    	SampleUdfFunction($test1)
+    }
+}

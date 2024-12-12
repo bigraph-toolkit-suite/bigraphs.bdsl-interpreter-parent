@@ -1,0 +1,14 @@
+signature Sig1 {
+	active ctrl a arity 2
+	passive ctrl b arity 2
+	atomic ctrl c arity 2
+}
+
+main = {
+	println($bigraph01)
+}
+
+// Connect two nodes over a closed link (i.e., an edge)
+val bigraph01(Sig1) = {
+   (id(1) || /("x")) * (a["x"] | a["x"])
+}

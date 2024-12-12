@@ -1,0 +1,11 @@
+namespace sum.operation
+import:bdsl sum.types.*
+import:bdsl sum.numbers.*
+
+react r1(SigSum) = { (left - s - id(1)) | (right - id(1)) }, { (left - id(1)) | (right - s - id(1)) }
+react r2(SigSum) = { (left - z) | (right - s - id(1)) }, { s - id(1) }
+
+brs summation(SigSum) = {
+    agents = [$expression],
+    rules = [$r1, $r2]
+}

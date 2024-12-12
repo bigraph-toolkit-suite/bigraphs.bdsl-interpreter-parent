@@ -1,0 +1,40 @@
+signature SigMap {
+	Car: 1
+	atomic Fuel: 0
+	Place: 1
+	Road: 1
+	atomic Target: 1
+}
+
+main = {
+	brs findPath(SigMap) = {
+		agents = [$map],
+		rules = [$moveCar],
+		preds = [$targetReached]
+	}
+	execute($findPath)
+}
+
+val car(SigMap) = {
+    Car["target"] - (Fuel | Fuel | Fuel | Fuel | Fuel | Fuel | Fuel | Fuel)
+}
+
+val map(SigMap) = {
+	Place["p0"] - ($car | Road["p3"] - brn() | Road["p1"] - brn()) |
+	Place["p7"] - (Target["target"] | Road["p2"] - brn()) |
+	Place["p3"] - (Road["p7"] - brn() | Road["p4"] - brn()) |
+	Place["p1"] - (Road["p2"] - brn() | Road["p4"] - brn()) |
+	Place["p4"] - (Road["p1"] - brn() | Road["p5"] - brn()) |
+	Place["p2"] - (Road["p5"] - brn())
+
+}
+
+react moveCar(SigMap) = {
+	Place["fromD"] - id(1) | Place["fromS"] - (Road["fromD"] - brn() | (Car["target"] - (id(1) | Fuel)) | id(1))
+}, {
+    (Place["fromD"] - (id(1) | Car["target"] - id(1))) | (Place["fromS"] - (id(1) | Road["fromD"] - brn()))
+}
+
+pred targetReached(SigMap):partial = {
+	Place["from"] - (id(1) | Target["target"] | Car["target"])
+}

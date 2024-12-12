@@ -1,0 +1,14 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+}
+
+main = {
+	println($bigExplicitRoot)
+	println($bigExplicitRoot, xmi)
+	println($bigExplicitRoot, ecore)
+}
+
+val bigExplicitRoot(Sig1) = {
+	a | b
+}

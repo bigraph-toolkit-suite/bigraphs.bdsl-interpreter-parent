@@ -1,0 +1,31 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+ 	println($big1)
+ 	println($big2)
+}
+
+val big1(Sig1) = {
+    val ex1:a = {
+        a - b
+        a - a
+    }
+    val ex2:a = {
+        val foo:a = {
+        }
+    }
+    val ex3:a = { $ex2 }
+}
+
+val big2(Sig1): a = {
+    val ex1:a = {
+        a - b
+        a - a
+    }
+    val ex2:b = { }
+    val ex3:c = { }
+}

@@ -1,0 +1,18 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+signature Sig2 {
+	ctrl d arity 1
+	ctrl e arity 1
+}
+
+main = {
+}
+
+pred predVar1(Sig1):partial = { a | b}
+pred predVar2(Sig1) = load(sig=Sig1, as=xmi, resourcePath="classpath:models/test.xmi")
+pred predVar3 = $predVar1
+pred predVar4(Sig1):iso = { a | b | b}

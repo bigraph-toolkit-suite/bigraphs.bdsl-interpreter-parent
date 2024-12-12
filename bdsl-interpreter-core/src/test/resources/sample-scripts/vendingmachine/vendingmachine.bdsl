@@ -1,0 +1,96 @@
+signature Sig {
+	VM: 0
+	Button1: 0
+	Button2: 0
+	PHD: 0
+	Wallet: 0
+	Tresor: 0
+	atomic Coin: 1
+	atomic Pressed: 0
+	atomic Coffee: 0
+	atomic Tea: 0
+	Container: 0
+}
+
+main = {
+    //println($student)
+    //println($vendingMachine)
+    //println($system)
+    //println($teaIsEmpty)
+    export($system, as=png, resourcePath="file:src/test/resources/dump/systemagent.png")
+    brs example(Sig) = {
+        agents = [$system],
+        rules = [$insertCoin, $pushBtn1, $pushBtn2, $giveCoffee, $giveTea],
+        preds = [$teaIsEmpty, $coffeeIsEmpty]
+    }
+    execute($example)
+}
+
+val student(Sig): PHD = {
+    Wallet - (Coin | Coin)
+}
+
+val vendingMachine(Sig): VM = {
+    Tresor-brn() | Button1-brn() | Button2-brn() | Container - (Coffee | Coffee) | Container - (Tea | Tea)
+}
+
+val system(Sig) = {
+    $student | $vendingMachine
+}
+
+pred teaIsEmpty(Sig):partial = load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/teaEmpty.xmi")
+pred coffeeIsEmpty(Sig):partial = load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/coffeeEmpty.xmi")
+
+listenForPredicateMatch($example, [$teaIsEmpty]) = {
+    println("Tea is empty. Notify the vendor for more.")
+}
+
+listenForRuleMatch($example , [$insertCoin]) = {
+    println("Coin inserted")
+}
+
+listenForRuleMatch($example , [$pushBtn1]) = {
+    println("Btn1 pushed")
+}
+
+listenForRuleMatch($example , [$pushBtn2]) = {
+    println("Btn2 pushed")
+}
+
+listenForRuleMatch($example , [$giveCoffee]) = {
+    println("Give Coffee")
+}
+
+listenForRuleMatch($example , [$giveTea]) = {
+    println("Give Tea")
+}
+
+react insertCoin(Sig) = {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/insertCoinL.xmi")
+}, {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/insertCoinR.xmi")
+}
+
+react pushBtn1(Sig) = {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/pushBtn1L.xmi")
+}, {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/pushBtn1R.xmi")
+}
+
+react pushBtn2(Sig) = {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/pushBtn2L.xmi")
+}, {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/pushBtn2R.xmi")
+}
+
+react giveCoffee(Sig) = {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/giveCoffeeL.xmi")
+}, {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/giveCoffeeR.xmi")
+}
+
+react giveTea(Sig) = {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/giveTeaL.xmi")
+}, {
+    load(sig=Sig, as=xmi, resourcePath="classpath:sample-scripts/vendingmachine/giveTeaR.xmi")
+}

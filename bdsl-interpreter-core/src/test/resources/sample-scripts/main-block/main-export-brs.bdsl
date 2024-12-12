@@ -1,0 +1,38 @@
+signature Sig1 {
+	atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+signature Sig2 {
+	atomic ctrl x arity 1
+	atomic ctrl y arity 1
+}
+
+main = {
+	println($bigExplicitRoot)
+	brs example(Sig1) = {
+        agents = [$bigExplicitRoot, $bigExplicitRoot],
+    	rules = [$testReact1],
+    	preds = [$pred1]
+    }
+    export($example)
+    export($example, as=bigrapher, resourcePath="console:")
+    export($example, as=bigmc, resourcePath="console:")
+    export($example, as=bigmc, resourcePath="file:src/test/resources/dump/test.bigmc")
+    export($example, as=ecore)
+    export($example, as=ecore, resourcePath="file:src/test/resources/dump/test.ecore")
+}
+
+val bigExplicitRoot(Sig1) = {
+	a | b | b
+}
+
+react testReact1(Sig1) = {
+    $bigExplicitRoot
+}, {
+    a | b
+}
+
+pred pred1(Sig1):iso = {
+    a
+}

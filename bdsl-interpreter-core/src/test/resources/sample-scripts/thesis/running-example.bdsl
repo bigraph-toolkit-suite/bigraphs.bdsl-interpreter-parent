@@ -1,0 +1,12 @@
+signature Sig1 {
+	active K: 1
+	atomic ctrl L arity 1
+}
+
+main = {
+    println($G)
+}
+
+val G(Sig1) = {
+	closure("x") * (K["x"] | L["x"])
+}

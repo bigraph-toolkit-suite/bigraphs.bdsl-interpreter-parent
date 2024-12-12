@@ -1,0 +1,28 @@
+signature Sig1 {
+	atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+main = {
+	brs example(Sig1) = {
+        agents = [$bigExplicitRoot],
+    	rules = [$testReact1],
+    	preds = [$pred1]
+    }
+    export($example, as=bigmc)
+    execute($example)
+}
+
+val bigExplicitRoot(Sig1) = {
+	a | b | b
+}
+
+react testReact1(Sig1) = {
+    $bigExplicitRoot
+}, {
+    a | b
+}
+
+pred pred1(Sig1):iso = {
+    a
+}

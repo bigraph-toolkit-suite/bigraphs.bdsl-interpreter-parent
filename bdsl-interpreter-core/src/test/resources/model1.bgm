@@ -1,0 +1,9 @@
+%passive a : 1;
+%passive b : 1;
+
+
+b | a | b -> b | a;
+
+b | a | b ;
+
+%check

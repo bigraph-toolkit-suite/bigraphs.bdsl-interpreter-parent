@@ -1,0 +1,14 @@
+signature Sig1 {
+	atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+main = {
+    val test2(Sig1) = { a | b }
+}
+
+
+val test(Sig1) = {
+	a | a | a
+}
+

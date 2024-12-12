@@ -1,0 +1,19 @@
+signature Sig1 {
+	atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+main = {
+    val test2 = load(sig=Sig1, as=xmi, resourcePath="classpath:models/test.xmi")
+    $test2 = load(sig=Sig1, as=xmi, resourcePath="classpath:models/test.xmi")
+    //val abc = $test2 = $test = load(sig=Sig1, as=xmi, resourcePath="classpath:models/test_bbb.xmi")
+    println($test)
+    println($test2)
+    //println($abc)
+}
+
+
+val test(Sig1) = {
+	a | a | a
+}
+

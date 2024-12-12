@@ -1,0 +1,30 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+	println($big1)
+	println($big2)
+}
+
+val big1(Sig1) = {
+	a | id(1) | b | id(2)
+}
+
+val big2(Sig1): Sig1.a = {
+	a || id(1) || b || id(2)
+}
+
+val big3(Sig1) = {
+    a || id(1) || c || id(2)
+}
+
+val big4(Sig1) = {
+    join()
+}
+
+val big5(Sig1) = {
+    join() || join()
+}

@@ -1,0 +1,8 @@
+digraph "trans.dot" {
+stylesheet = "style_sbrs.css"
+{ rank=source; 0 };
+0 [ label="0", URL="./0.svg", fontsize=9.0, id="s0", fontname="monospace", width=.60, height=.30, style="bold" ];
+1 [ label="1", URL="./1.svg", fontsize=9.0, id="s1", fontname="monospace", width=.60, height=.30 ];
+
+0 -> 1 [ label="parametricreactionrule0", fontname="monospace", fontsize=7.0,arrowhead="vee", arrowsize=0.5 ];
+}

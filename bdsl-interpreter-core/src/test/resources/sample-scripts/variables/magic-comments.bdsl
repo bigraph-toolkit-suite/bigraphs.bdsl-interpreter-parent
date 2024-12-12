@@ -1,0 +1,19 @@
+// encoding: UTF-8
+// ns-uri: http://www.example.org
+// ns-prefix: sample
+// name: F
+// schemaLocation: test-1.ecore
+
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+	println($big1)
+}
+
+val big1(Sig1) = {
+	a | b | c
+}

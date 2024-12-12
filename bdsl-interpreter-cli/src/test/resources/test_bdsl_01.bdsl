@@ -1,0 +1,35 @@
+// encoding: UTF-8
+// ns-uri: http://www.example.org
+// ns-prefix: sample
+// name: F
+// schemaLocation: test-1.ecore
+
+signature Sig1 {
+	atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+main = {
+	println($bigExplicitRoot)
+	brs example = {
+        agents = [$bigExplicitRoot],
+    	rules = [$testReact1],
+    	preds = [$pred1]
+    }
+
+	export($example, as=bigmc)
+}
+
+val bigExplicitRoot(Sig1) = {
+	a | b | b
+}
+
+react testReact1(Sig1) = {
+    $bigExplicitRoot
+}, {
+    a | b
+}
+
+pred pred1(Sig1):iso = {
+    a
+}

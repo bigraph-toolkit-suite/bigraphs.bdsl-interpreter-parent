@@ -1,0 +1,40 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+signature Sig2 {
+	ctrl d arity 1
+	ctrl e arity 1
+}
+
+main = {
+	val foo = $bigExplicitRoot2 // signature will be Sig1
+	$foo = $bigTest // still Sig1
+	$foo = $bigSig2 // has now Sig2
+}
+
+val bigExplicitRoot(Sig1) = {
+	a | b | b
+}
+
+val bigExplicitRoot2 = load(sig=Sig1, as=xmi, resourcePath="classpath:models/test.xmi")
+
+val bigTest = $bigExplicitRoot
+
+val bigSig2(Sig2) = {
+    d | e
+}
+
+react testReact1(Sig1) = {
+    $bigExplicitRoot
+}, {
+    a | b
+}
+
+val baz = {
+    Sig1.a
+}
+
+react reactRule2(Sig1) = $testReact1

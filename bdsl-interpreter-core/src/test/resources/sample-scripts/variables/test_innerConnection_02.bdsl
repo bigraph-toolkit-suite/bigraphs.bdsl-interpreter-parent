@@ -1,0 +1,19 @@
+signature Sig1 {
+	active ctrl a arity 2
+}
+
+main = {
+	println($bigResult)
+}
+
+val bigResult(Sig1) = {
+    $big01 * $big02
+}
+
+val big01(Sig1) = {
+   (id(1) | /("y", "x"))
+}
+
+val big02(Sig1) = {
+   subst("y", ["y"]) | subst("x", ["x"]) | (a["y", "x"] | a["y", "x"])
+}

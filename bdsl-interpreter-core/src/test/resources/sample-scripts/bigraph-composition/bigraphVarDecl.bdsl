@@ -1,0 +1,19 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+	println("Hello, Bigraph Declarations ...")
+	println($bigExplicitRoot)
+	println($bigNonExplicitRoot)
+}
+
+val bigExplicitRoot(Sig1) = {
+	a | b | c
+}
+
+val bigNonExplicitRoot(Sig1): Sig1.a = {
+	a | b | c
+}

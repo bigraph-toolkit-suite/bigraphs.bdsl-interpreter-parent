@@ -1,0 +1,19 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+	println("Hello, Bigraph Declarations ...")
+	println($big1)
+	println($big2)
+}
+
+val big1(Sig1) = {
+	a - b - c
+}
+
+val big2(Sig1): Sig1.a = {
+	a * b * c
+}

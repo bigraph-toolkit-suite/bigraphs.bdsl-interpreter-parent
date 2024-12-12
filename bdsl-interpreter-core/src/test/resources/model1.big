@@ -1,0 +1,14 @@
+atomic ctrl A = 1;
+atomic ctrl B = 1;
+
+# bigrapher full -d ./states -f svg -s states -M 10 -t trans.svg -v model1.big
+react parametricreactionrule0 = /wmxm /elig /jrwd ((B{wmxm} | B{elig} | A{jrwd})) -> /nbmp /bbwl ((A{nbmp} | B{bbwl}));
+
+big sample = (/a) | /wbks /ogjy /qdiz (B{wbks} | B{ogjy} | A{qdiz});
+
+big sample2 = /wbks /ogjy /qdiz (B{wbks} | B{ogjy} | A{qdiz});
+
+begin brs
+	init sample2;
+	rules = [{parametricreactionrule0}];
+end

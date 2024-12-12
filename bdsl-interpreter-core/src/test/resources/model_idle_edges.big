@@ -1,0 +1,15 @@
+atomic ctrl A = 1;
+atomic ctrl B = 1;
+atomic ctrl C = 2;
+
+# bigrapher full -d ./model_idle_edges -f svg -s model_idle_edges -M 10 -t trans.svg -v model_idle_edges.big
+react parametricreactionrule0 = /wmxm /elig /jrwd ((B{wmxm} | B{elig} | A{jrwd})) -> /nbmp /bbwl ((A{nbmp} | B{bbwl}));
+
+big sample = /x * A{x}; #/a  . (a/{x1} || b/{x2} || c/{x3} || d/{x4});
+
+big sample2 = /wbks /ogjy /qdiz (B{wbks} | B{ogjy} | A{qdiz});
+
+begin brs
+	init sample2;
+	rules = [{parametricreactionrule0}];
+end

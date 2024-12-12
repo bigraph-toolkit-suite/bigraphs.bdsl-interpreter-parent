@@ -1,0 +1,7 @@
+<bigraphMetaModel:BBigraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bigraphMetaModel="de.tud.inf.st.bigraphs" xsi:schemaLocation="de.tud.inf.st.bigraphs test_bbb.ecore">
+  <bRoots>
+    <bChild xsi:type="bigraphMetaModel:b" name="v0"/>
+    <bChild xsi:type="bigraphMetaModel:b" name="v1"/>
+    <bChild xsi:type="bigraphMetaModel:b" name="v2"/>
+  </bRoots>
+</bigraphMetaModel:BBigraph>

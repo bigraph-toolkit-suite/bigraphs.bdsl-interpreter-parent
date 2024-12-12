@@ -1,0 +1,8 @@
+namespace sum.program
+import:bdsl sum.types.*
+import:bdsl sum.numbers.*
+import:bdsl sum.operation.*
+
+main = {
+	execute($summation)
+}

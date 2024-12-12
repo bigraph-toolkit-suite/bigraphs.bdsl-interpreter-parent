@@ -1,0 +1,30 @@
+signature SigMap {
+	Car: 1
+	Fuel: 0
+	Place: 1
+	Road: 1
+	Target: 1
+}
+
+main = {
+	brs findPath(SigMap) = {
+		agents = [$map],
+		rules = [$moveCar],
+		preds = [$targetReached]
+	}
+	execute($findPath)
+}
+
+val map(SigMap) = {
+	Car
+}
+
+react moveCar(SigMap) = {
+	Place["fromD"] - id(1) | Place["fromS"] - (Road["fromD"] | (Car["target"] - (id(1) | Fuel)) | id(1))
+}, {
+    (Place["fromD"] - (id(1) | Car["target"] - id(1))) | (Place["fromS"] - (id(1) | Road["fromD"]))
+}
+
+pred targetReached(SigMap) = {
+	Car
+}

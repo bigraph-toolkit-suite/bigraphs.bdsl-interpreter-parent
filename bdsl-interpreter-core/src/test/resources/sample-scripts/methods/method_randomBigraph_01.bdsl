@@ -1,0 +1,17 @@
+signature Sig1 {
+	ctrl a arity 4
+	ctrl b arity 4
+	ctrl c arity 4
+	ctrl d arity 4
+}
+
+signature Sig2 {
+	ctrl a arity 4
+}
+
+val test3 = randomBigraph(sig=Sig2, n = 20, t = 2, p = 1.0)
+
+main = {
+    val test2(Sig1) = randomBigraph(sig=Sig1, n = 20, t = 2, p = 1.0)
+    println($test2)
+}

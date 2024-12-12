@@ -1,0 +1,46 @@
+import:udf de.tudresden.inf.st.bigraphs.examples.interpreter.udf.*
+
+signature Sig1 {
+	atomic ctrl a arity 1
+	atomic ctrl b arity 1
+}
+
+main = {
+	brs example(Sig1) = {
+        agents = [$agent],
+    	rules = [$testReact1],
+    	preds = [$pred1]
+    }
+    execute($example)
+}
+
+val agent(Sig1) = {
+	a | b | b
+}
+
+react testReact1(Sig1) = {
+    $agent
+}, {
+    a | b
+}
+
+pred pred1(Sig1):iso = {
+    a | b
+}
+
+onReactiveSystemStarted($example) = {
+    println("brs started 1")
+    j {
+        HelloUdfFunction()
+        HelloUdfFunction()
+    }
+    println("brs started 2")
+}
+
+onReactiveSystemFinished($example) = {
+    println("brs finished")
+}
+
+listenForPredicateMatch($example, [$pred1]) = {
+    println("predicate matched!")
+}

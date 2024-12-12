@@ -1,0 +1,20 @@
+signature Sig1 {
+	active ctrl a arity 2
+}
+
+main = {
+	println($bigResult)
+}
+
+// Connect two nodes by edges
+val bigResult(Sig1) = {
+    $big01 * $big02
+}
+
+val big01(Sig1) = {
+   (id(1) | /("x", "y"))
+}
+
+val big02(Sig1) = {
+   a["x", "y"] | a["y", "x"]
+}

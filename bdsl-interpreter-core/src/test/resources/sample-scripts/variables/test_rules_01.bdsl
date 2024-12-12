@@ -1,0 +1,13 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+}
+
+    react ruleVar1(Sig1) = { a | b}, { a | b}
+    react ruleVar2(Sig1) = {load(sig=Sig1, as=xmi, resourcePath="classpath:models/test.xmi")}, { a | b}
+    react ruleVar3 = $ruleVar1
+    react ruleVar4 = $ruleVar2

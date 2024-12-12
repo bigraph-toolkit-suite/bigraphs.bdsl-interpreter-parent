@@ -1,0 +1,27 @@
+signature Sig1 {
+	active ctrl a arity 1
+	passive ctrl b arity 1
+	atomic ctrl c arity 1
+}
+
+main = {
+	println($big1)
+	println($big2)
+}
+
+val big1(Sig1) = {
+    closure("x", "y", "z")
+}
+
+// closes the outer name and removes the site, leaves the idle edge intact
+val big2(Sig1): Sig1.a = {
+	closure("x") * (a["x"] - barren())
+}
+
+val big3(Sig1) = {
+    closure("x") | clsre("z") | closure("y", "a") | clsre("z") | /("x")
+}
+
+val bigSubst1(Sig1) = {
+    subst("a", ["x", "y"])
+}

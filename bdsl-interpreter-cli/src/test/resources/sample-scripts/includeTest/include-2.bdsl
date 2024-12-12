@@ -1,0 +1,14 @@
+namespace sum.numbers
+import:bdsl sum.types.*
+
+val numberLeft(SigSum): left = {
+    s - s - s - s - s - s - z
+}
+
+val numberRight(SigSum): right = {
+	s - s - s - s - z
+}
+
+val expression(SigSum): plusOp = {
+    $numberLeft | $numberRight
+}
