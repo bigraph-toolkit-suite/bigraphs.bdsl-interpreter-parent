@@ -10,7 +10,7 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 
 |                              | Release | Development    |
 |------------------------------|---------|----------------|
-| **Version**                  | 2.0.1   | 3.0.0-SNAPSHOT |
+| **BDSL Interpreter**         | 2.0.1   | 3.0.0-SNAPSHOT |
 | BDSL Core Elements (Grammar) | 2.0.1   | 2.0.1          |
 
 ### Structure
