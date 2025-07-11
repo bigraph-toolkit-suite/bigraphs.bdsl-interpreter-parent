@@ -2,27 +2,25 @@
 
 # BDSL Interpreter Framework
 
-**Version Compatability**
-
-|                              | Release | Development    |
-|------------------------------|---------|----------------|
-| **BDSL Interpreter**         | 2.0.1   | 3.0.0-SNAPSHOT |
-| BDSL Core Elements (Grammar) | 2.0.1   | 2.0.1          |
-| Bigraph Framework            | 2.0.1   | 2.0.1          |
+| Compatibility                    | Release |
+| -------------------------------- | ------- |
+| **BDSL Interpreter**             | 2.0.1   |
+| \|- BDSL Core Elements (Grammar) | 2.0.1   |
+| \|- Bigraph Framework            | 2.0.1   |
 
 ## Description
 
 The BDSL Interpreter is a multi-module Maven project
-designed to provide a robust and extensible framework for interpreting BDSL scripts. 
+designed to provide an extensible framework for interpreting BDSL scripts. 
 Each module in the project focuses on a specific set of features,
 enabling a modular and maintainable architecture for developing and executing BDSL-based applications.
 Below is an overview of the project and its modules:
 
 **Project Modules:**
-- bdsl-interpreter-parent: Acts as the parent module for the entire project, managing shared configurations, dependencies, and build settings for all submodules.
-- bdsl-interpreter-core: Contains the core features and foundational components of the BDSL interpreter. This module defines the architectural framework and fundamental mechanisms required for interpreting BDSL language constructs.
-- bdsl-interpreter-cli: Implements a command-line interface for interacting with the BDSL interpreter. This module enables users to execute BDSL models and interact with the interpreter from the terminal.
-- bdsl-execution-common: Provides the common execution environment and reusable strategies for the BDSL interpreter. This module encapsulates shared execution logic, environment management, and strategy definitions.
+- **bdsl-interpreter-parent:** Acts as the parent module for the entire project, managing shared configurations, dependencies, and build settings for all submodules.
+- **bdsl-interpreter-core:** Contains the core features and foundational components of the BDSL interpreter. This module defines the architectural framework and fundamental mechanisms required for interpreting BDSL language constructs.
+- **bdsl-interpreter-cli:** Implements a command-line interface for interacting with the BDSL interpreter. This module enables users to execute BDSL models and interact with the interpreter from the terminal.
+- **bdsl-execution-common:** Provides the common execution environment and reusable strategies for the BDSL interpreter. This module encapsulates shared execution logic, environment management, and strategy definitions.
 
 The framework and grammar can be extended and facilitate "bigraphical language engineering."
 
@@ -53,22 +51,6 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 </dependencies>
 ```
 
-**SNAPSHOT Releases**
-
-For SNAPSHOT release configure the following repository:
-
-```xml
-<repositories>
-    <repository>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-        <id>ossrh</id>
-        <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-</repositories>
-```
-
 ### Usage Instructions
 
 > Related Module: `bdsl-interpreter-cli`
@@ -83,14 +65,15 @@ java -jar bdsl.jar --main=program.bdsl <other-options...>
 
 ## Development: Build Configuration
 
-**Requirements:** 
+**Requirements:**
+
 - Java >= 17
 - Maven >= 3.8.3
 
 To build the project and all its individual components:
 
 ```shell
-mvn clean install -DskipTests
+$ mvn clean install -DskipTests
 ```
 
 To build the runnable BDSL CLI interpreter tool:
@@ -152,19 +135,12 @@ More details can be found link:https://central.sonatype.org/publish/requirements
 > The Maven build script can automatically install it in the local Maven repository (usually located under `~/.m2/`).
 
 
-[//]: # (> **Note 2:** The project uses [Lombok]&#40;https://projectlombok.org/&#41; in order to incorporate **extension methods** for Java.)
-
-[//]: # (> The IDE is not able to properly resolve these extension methods and will show error messages that the used extension methods cannot be resolved. **However, the code will still compile.** )
-
-[//]: # (> An update of the Lombok IntelliJ plugin is released soon supporting extension methods by Lombok in IntelliJ. )
-
-
 ## License
 
 **Bigraph Interpreter** is Open Source software released under the Apache 2.0 license.
 
 ```text
-   Copyright 2020-present Dominik Grzelak
+Copyright 2020-present Bigraph Toolkit Developers
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
