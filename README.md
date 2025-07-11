@@ -108,7 +108,7 @@ The version can be specified in the project's root `pom.xml` via the property `b
 
 To deploy the BDSL Interpreter Framework to the Central Repository:
 ```bash
-mvn clean deploy -DskipTests -P release,ossrh
+$ mvn clean deploy -DskipTests -P release,central
 ```
 
 **Settings**
