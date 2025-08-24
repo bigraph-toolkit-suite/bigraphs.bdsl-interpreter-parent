@@ -1,14 +1,12 @@
 <img src="./etc/logo-bdsl-interpreter-dark.png" style="zoom:90%;" />
 
+> Latest Version: **2.0.1**
+
+- BDSL user guide: https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-752170
+
+---
+
 # BDSL Interpreter Framework
-
-| Compatibility                    | Release |
-| -------------------------------- | ------- |
-| **BDSL Interpreter**             | 2.0.1   |
-| \|- BDSL Core Elements (Grammar) | 2.0.1   |
-| \|- Bigraph Framework            | 2.0.1   |
-
-## Description
 
 The BDSL Interpreter is a multi-module Maven project
 designed to provide an extensible framework for interpreting BDSL scripts. 
@@ -23,6 +21,14 @@ Below is an overview of the project and its modules:
 - **bdsl-execution-common:** Provides the common execution environment and reusable strategies for the BDSL interpreter. This module encapsulates shared execution logic, environment management, and strategy definitions.
 
 The framework and grammar can be extended and facilitate "bigraphical language engineering."
+
+**Version Compatibility**
+
+| Component                        | Release |
+|----------------------------------| ------- |
+| **BDSL Interpreter**             | 2.0.1   |
+| \|- BDSL Core Elements (Grammar) | 2.0.1   |
+| \|- Bigraph Framework            | 2.0.1   |
 
 ## Getting Started
 
@@ -58,10 +64,6 @@ The framework and grammar can be extended and facilitate "bigraphical language e
 ```bash
 java -jar bdsl.jar --main=program.bdsl <other-options...>
 ```
-
-> Refer also to the BDSL user guide: https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-752170
-> 
-> It provides a more detailed introduction into BDSL and the command-line tool
 
 ## Development: Build Configuration
 
